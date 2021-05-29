@@ -1,48 +1,45 @@
-<!-- Toast.vue -->
-
 <template>
-  <div class="toast" v-show="isShow">
-    <div>{{message}}</div>
-  </div>
+  <transition name="alert-fade">
+    <div id="toast" v-show="visible" class="dialog-tips dialog-center">
+      {{ message }}
+    </div>
+  </transition>
 </template>
-
-
-<!-- Toast.vue -->
 <script>
 export default {
-  name: "Toast",
   data() {
     return {
+      visible: false,
       message: "",
-      isShow: false
     };
   },
-  methods: {
-    show(message, duration = 2000) {
-      this.isShow = true;
-      this.message = message;
-
-      setTimeout(() => {
-        this.isShow = false;
-        this.message = "";
-      }, duration);
-    }
-  }
 };
 </script>
-
-<style scoped>
-/* fixed 居中 */
-.toast {
+<style lang="scss" scoped>
+.alert-fade-enter-active,
+.alert-fade-leave-active {
+  transition: opacity 0.3s;
+}
+.alert-fade-enter,
+.alert-fade-leave-to {
+  opacity: 0;
+}
+.dialog-tips {
   position: fixed;
-  top: 50%;
+  z-index: 100;
+  min-width: 100px;
+  padding: 15px;
+  border-radius: 15px;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0px 8px 30px 0 rgba(0, 0, 0, 0.363);
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+}
+.dialog-center {
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 8px 10px;
-  color: aliceblue;
-
-  z-index: 9999;
-
-  background-color: rgba(0, 0, 0, 0.75);
 }
 </style>

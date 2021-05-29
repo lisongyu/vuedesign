@@ -5,18 +5,14 @@
 </template>
 <script>
 export default {
-  data(){
-    return{
-      
-    }
-    
+  data() {
+    return {};
   },
-  methods:{
-    handleToast(){
-      console.log('我要出toast')
-      this.$toast.show('toast 加载成功' , 2000)
-    }
-
-  }
-}
+  methods: {
+    handleToast() {
+      console.log("我要出toast");
+      this.$toast("toast 加载成功", 2000);
+    },
+  },
+};
 </script>
