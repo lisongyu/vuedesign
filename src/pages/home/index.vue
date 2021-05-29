@@ -1,7 +1,16 @@
 <template>
   <div>
-     <router-link to="/my">我的</router-link>
-    <router-link to="/Login">登陆页</router-link>
+    <ul>
+      <li>
+        <router-link to="/plugins">插件类</router-link>
+      </li>
+      <li>
+        <router-link to="/Login">登陆页</router-link>
+      </li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 </template>
 
