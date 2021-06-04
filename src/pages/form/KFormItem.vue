@@ -11,7 +11,11 @@
 </template>
 <script>
   import Schema from 'async-validator'
+  import emitter from '@/utils/mixins/emitter'
 export default {
+  name:'KFormItem',
+  componentName:'KFormItem',
+  mixins:[emitter],
   inject:['form'],
   props:{
     label:{
@@ -32,6 +36,10 @@ export default {
     this.$on('validate',()=>{
       this.validate()
     })
+    if(this.prop){
+    // 派发事件通知KForm,新增一个字段KFormItem实例
+    this.dispatch('KForm','kkb.form.addField',[this])
+    }
   },
   methods: {
     validate(){
