@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+// import Router from 'vue-router'
+import Router from './kvue-router'
 
 //组件模块
 // import Login from '../pages/admin/login'
