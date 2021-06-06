@@ -10,6 +10,7 @@ import My from '../pages/my'
 import eventBus1 from '../pages/eventBus/child1'
 import eventBus2 from '../pages/eventBus/child2'
 import parentuse from '../pages/parent'
+import vuexDemo from '../pages/vuexDemo'
 import form from '../pages/form'
 Vue.use(Router)
 
@@ -22,7 +23,8 @@ export default new Router({
     { path: '/eventBus1', name: 'eventBus1', component: eventBus1 },
     { path: '/eventBus2', name: 'eventBus2', component: eventBus2 },
     { path: '/parentuse', name: 'parentuse', component: parentuse },
-    { path: '/form', name: 'form', component: form }
+    { path: '/form', name: 'form', component: form },
+    { path: '/vuexDemo', name: 'vuexDemo', component: vuexDemo }
 
   ]
 })

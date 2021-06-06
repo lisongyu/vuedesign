@@ -13,7 +13,9 @@
       <li>
           <router-link to="/form">表单</router-link>
       </li>
-      <li></li>
+      <li>
+        <router-link to="/vuexDemo">vuex实现demo</router-link>
+      </li>
     </ul>
   </div>
 </template>
